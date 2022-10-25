@@ -1,0 +1,9 @@
+#!/bin/bash
+
+kill-qemu
+
+if [ $# -lt 1 ]; then
+    start-qemu
+else
+    start-qemu $1
+fi

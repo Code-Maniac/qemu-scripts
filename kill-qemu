@@ -1,0 +1,7 @@
+#!/bin/bash
+
+procs=$(ps -a | grep qemu | awk '{print $NF}')
+
+for proc in ${procs}; do
+    pkill ${proc}
+done

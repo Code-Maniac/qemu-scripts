@@ -1,0 +1,13 @@
+#!/bin/bash
+
+DEFAULTMACHINE=qemux86-64
+
+if [ $# -lt 1 ]; then
+    echo "No target specified"
+    echo "Defaulting to target: ${DEFAULTMACHINE}"
+    MACHINE=${DEFAULTMACHINE}
+else
+    MACHINE=$1
+fi
+
+runqemu slirp publicvnc  ${MACHINE} &
